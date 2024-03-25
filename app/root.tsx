@@ -1,3 +1,9 @@
+/// <reference types="vite-plugin-svgr/client" />
+
+import './reset.css';
+import './global.css';
+import './tailwind.css'
+
 import {
   Links,
   Meta,
@@ -5,7 +11,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import { Analytics } from "@vercel/analytics/react";
+import ReplicaLogo from '@/components/logos/replica.svg?react'
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -17,10 +23,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
+        <ReplicaLogo className="mt-3 mx-5 max-w-56"/>
         {children}
         <ScrollRestoration />
         <Scripts />
-        <Analytics />
       </body>
     </html>
   );
